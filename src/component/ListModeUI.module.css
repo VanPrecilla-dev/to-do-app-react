@@ -25,9 +25,9 @@
 }
 
 
-.tr:hover {
-    background-color: white;
-    color: black;
+.tr:hover, .btnDiv:hover, .lightIcon:hover {
+    background-color: gray;
+    color: white;
 }
 
 .td, .th {
@@ -35,6 +35,7 @@
     border-width: 1px;
     border-style: solid ;
     padding: 1%;
+    width: max-content;
 }
 
 .labelView {
