@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Brief of this To-Do-App React by Van Precilla
+
+- This To-Do-App app use ReactJS Framework, JavaScript, HTML, and Vanilla CSS.
+- This app use ConTextAPI for state management.
+- This app use functional components and use hooks.
+- This To-Do App use the local storage of the web browser to store data, dark mode status and grid mode status.
+- This app implement a full CRUD using localStorage as the Database.
+- This app has dark and light mode which is visible when yout toggle the button.
+- This app has grid and table view.
+- This app is web responsive for desktop & mobile view.
+- This app has split screen for add data nad view data for dekstop or larger view.
