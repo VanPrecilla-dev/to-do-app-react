@@ -4,6 +4,8 @@ Simple To-Do-App using ReactJS, JavaScript, HTML &amp; Vanilla CSS using web bro
 CLICK HERE FOR THE LIVE DEMO : https://vanprecilla-dev.github.io/to-do-app-react/ 
 (Instruction: Please entry first a tasks as many as you can or at least 15 tasks to see how the app really works. Then, you can do full CRUD, change dark mode, list view and grid view. Kindly check your localstorage after use. Thanks )
 
+See Master Branch for the codes.
+
 Brief of this To-Do-App React by Van Precilla
 
 - This To-Do-App app use ReactJS Framework, JavaScript, HTML, and Vanilla CSS.
