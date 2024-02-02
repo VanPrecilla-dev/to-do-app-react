@@ -23,3 +23,5 @@ Brief of this To-Do-App React by Van Precilla
 Thanks & Happy Coding - Van
 
 ![image](https://github.com/VanPrecilla-dev/to-do-app-react/assets/130641225/2bebf00a-4aa7-4d52-be44-9e6655d52eb4)
+
+![image](https://github.com/VanPrecilla-dev/to-do-app-react/assets/130641225/4848dff1-02fd-44a7-9015-938216230aa9)
