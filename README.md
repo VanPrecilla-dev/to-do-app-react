@@ -1,4 +1,6 @@
 **To-Do-App-React designed and coded by Van**
+
+
 **Simple To-Do-App using ReactJS, JavaScript, HTML &amp; Vanilla CSS using web browser local storage as the database**
 
 **CLICK HERE FOR THE LIVE DEMO : https://vanprecilla-dev.github.io/to-do-app-react/ **
