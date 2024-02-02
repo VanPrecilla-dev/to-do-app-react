@@ -1,8 +1,8 @@
-# to-do-app-react
-Simple To-Do-App using ReactJS, JavaScript, HTML &amp; Vanilla CSS using web browser local storage as the database
+**To-Do-App-React designed and coded by Van**
+**Simple To-Do-App using ReactJS, JavaScript, HTML &amp; Vanilla CSS using web browser local storage as the database**
 
-CLICK HERE FOR THE LIVE DEMO : https://vanprecilla-dev.github.io/to-do-app-react/ 
-(Instruction: Please entry first a tasks as many as you can or at least 15 tasks to see how the app really works. Then, you can do full CRUD, change dark mode, list view and grid view. Kindly check your localstorage after use. Thanks )
+**CLICK HERE FOR THE LIVE DEMO : https://vanprecilla-dev.github.io/to-do-app-react/ **
+**(Instruction: Please entry first a tasks as many as you can or at least 15 tasks to see how the app really works. Then, you can do full CRUD, change dark mode, list view and grid view. Kindly check your localstorage after use. Thanks )**
 
 See Master Branch for the codes.
 
