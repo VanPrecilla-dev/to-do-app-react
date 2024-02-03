@@ -20,7 +20,7 @@
     padding: 1em;
     border-radius: 15px;
     width: 30vw;
-    height: 0vh;
+    height: 70vh;
     align-self: center;
     text-align: center;
     top: 25px;
@@ -29,18 +29,12 @@
     background-color: #CDDDF4;
     color: #363671;
     overflow: auto;
- 
+    z-index: 20;
 }
 
 
 @media screen and (max-width: 1300px) {
-    .modalCard {
-        top: 20vh;    
-        margin: 5vw;
-        height: 60vh;
-    }
-
-    .lightModalCard {
+    .modalCard,  .lightModalCard  {
         top: 20vh;    
         margin: 5vw;
         height: 60vh;

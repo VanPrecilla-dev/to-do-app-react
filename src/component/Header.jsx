@@ -6,6 +6,7 @@ import { MdLightMode } from "react-icons/md";
 import { MdModeNight } from "react-icons/md";
 
 import { Context } from "../context/contextAPI";
+import Note from "./Note";
 
 const Header = () => {
   const { darkMode, modeViewFunction, listViewFunction, gridViewFunction } = useContext(Context);
@@ -31,8 +32,9 @@ const Header = () => {
             {darkMode ? <MdLightMode className={classes.imgIcon} /> : <MdModeNight className={classes.ligthImgIcon} />  }
           </button>
         </div>
+  
       </div>
-
+      <Note />
       <div id="centerLine" className={darkMode ? classes.line : classes.lightLine}></div>
     </>
   );

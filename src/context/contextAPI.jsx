@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { dataStore } from "./dataStore";
 
 export const Context = createContext(null);
 
@@ -18,20 +18,51 @@ const ContextAPIProvider = ({ children }) => {
   const [yesEdit, setYesEdit] = useState(false); //open & close of edit form
 
   const [darkMode, setDarkMode] = useState(() => {
-    const existingDarkModeStatus = localStorage.getItem("darkMode")
-    const existingDarkModeStatusParse = existingDarkModeStatus ? JSON.parse(existingDarkModeStatus) : true;
-    return existingDarkModeStatusParse
+    const existingDarkModeStatus = localStorage.getItem("darkMode");
+    const existingDarkModeStatusParse = existingDarkModeStatus
+      ? JSON.parse(existingDarkModeStatus)
+      : true;
+    return existingDarkModeStatusParse;
   }); //set darkMode
 
   const [gridMode, setGridMode] = useState(() => {
-    const existingGridModeStatus = localStorage.getItem("gridMode")
-    const existingGridModeStatusParse = existingGridModeStatus ? JSON.parse(existingGridModeStatus) : true;
-    return existingGridModeStatusParse
-  }) //change of gridMode
+    const existingGridModeStatus = localStorage.getItem("gridMode");
+    const existingGridModeStatusParse = existingGridModeStatus
+      ? JSON.parse(existingGridModeStatus)
+      : true;
+    return existingGridModeStatusParse;
+  }); //change of gridMode
 
   const newViewTasks = viewTasks.filter(
     (item) => !Array.isArray(item) || item.length > 0
   ); //filtering viewTasks to remove all [] empty array and show only with list array
+
+
+
+  //stored data and will show on first reload for user experience since this is local storage
+  
+
+  useEffect(() => {
+    //put ready input set of data for user experience after first reload
+    const storeData = () => {
+      const addedLocalData = localStorage.getItem("tasks");
+      const addedLocalDataParse = addedLocalData
+        ? JSON.parse(addedLocalData)
+        : [];
+
+      const filterData = addedLocalDataParse.filter(item => !Array.isArray(item) || item.length > 0)
+
+    //combining the old data in local storage and new data  from form into ne array
+      if (filterData.length === 0 ) {
+        const combineData = [...addedLocalDataParse, ...dataStore];
+        const combineDataStringify = JSON.stringify(combineData);
+        localStorage.setItem("tasks", combineDataStringify);
+        console.log("successfully have ready data");
+      }
+    };
+
+    storeData();
+  }, []);
 
   useEffect(() => {
     //function for saving data to local storage and getting th enew data and reflect it to screen at the same time
@@ -61,28 +92,25 @@ const ContextAPIProvider = ({ children }) => {
     console.log("tasks", tasks);
   }, [tasks, setViewTasks]); //always tag the correct dependency
 
-//useEffect for real time updating of darkmode in local storage 
+  //useEffect for real time updating of darkmode in local storage
   useEffect(() => {
     const getDarkModeStatus = () => {
-      localStorage.setItem("darkMode", JSON.stringify(darkMode));   
-      console.log("Dark Mode Status", darkMode)
-    }
+      localStorage.setItem("darkMode", JSON.stringify(darkMode));
+      console.log("Dark Mode Status", darkMode);
+    };
 
-    getDarkModeStatus()
+    getDarkModeStatus();
+  }, [setDarkMode, darkMode]);
 
-  }, [setDarkMode, darkMode])
-
-//setting gridMode status in local storage
+  //setting gridMode status in local storage
   useEffect(() => {
-
     const getGridModeStatus = () => {
-      localStorage.setItem("gridMode", JSON.stringify(gridMode));   
-      console.log("Dark Mode Status", gridMode)
-    }
+      localStorage.setItem("gridMode", JSON.stringify(gridMode));
+      console.log("Dark Mode Status", gridMode);
+    };
 
-    getGridModeStatus()
-
-  }, [gridMode, setGridMode])
+    getGridModeStatus();
+  }, [gridMode, setGridMode]);
 
   //for adding new data to localStorage
   const addFunction = (arrayData) => {
@@ -133,18 +161,18 @@ const ContextAPIProvider = ({ children }) => {
 
   //for turning On grid view
   const gridViewFunction = () => {
-    setGridMode(true)
+    setGridMode(true);
   };
 
-    //for turning On list view
+  //for turning On list view
   const listViewFunction = () => {
-    setGridMode(false)
+    setGridMode(false);
   };
 
-    //for turning On & Off dark mode
+  //for turning On & Off dark mode
   const modeViewFunction = () => {
     setDarkMode(!darkMode);
-    console.log('dark mode', darkMode)
+    console.log("dark mode", darkMode);
   };
 
   //back-up funtion for reserved button to remove the data in local storage
@@ -176,7 +204,7 @@ const ContextAPIProvider = ({ children }) => {
           modeViewFunction,
           gridViewFunction,
           listViewFunction,
-          gridMode
+          gridMode,
         }}
       >
         {children}

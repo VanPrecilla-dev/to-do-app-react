@@ -21,6 +21,8 @@ h1 {
     padding: 20px;
 }
 
+
+
 .closeBtn {
     position: absolute;
     top: 2%;
@@ -51,8 +53,7 @@ h1 {
 .tdLabelDiv {
     font-family: 'Space Mono', Calibri, sans-serif;
     font-size: 1.5vw;
-    float: left;
-   
+    float: left;   
 }
 
 .inputTable {
